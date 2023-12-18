@@ -14,7 +14,7 @@
         .col-2,
         .col-1,
         .col-3 {
-            background-color: #E5D4FF;
+            background-color: #393646;
             border-radius: 20px;
             padding-left: 20px;
             padding-right: 20px;
@@ -25,11 +25,13 @@
         }
 
         .btn {
-            background-color: #D0A2F7;
+            background-color: #F4EEE0;
         }
 
         body {
             font-size: 20px;
+            color: white;
+            background-color: #4F4557;
         }
     </style>
 </head>
@@ -132,7 +134,7 @@
     ?>
 </div>
 
-<body style="background-color: #E0F4FF;">
+<body>
     <div class="m-3 px-3">
         <h1 class="h1 m-3 p-3 text-center">Weatherooo</h1>
 
