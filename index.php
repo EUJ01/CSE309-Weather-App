@@ -36,7 +36,6 @@
     </style>
 </head>
 
-<!-- Main decoding -->
 <div>
     <?php
     $city = "Dhaka";
@@ -48,11 +47,9 @@
     $url = "https://api.openweathermap.org/data/2.5/weather?q=" . $city . "&APPID=707f887ecd5251999113de968cac62e8";
     $location = file_get_contents($url);
     $location_data = json_decode($location);
-    // getting the lat and long of searched city
     $lat = $location_data->coord->lat;
     $lon = $location_data->coord->lon;
 
-    // using the lat and long in the 5day wather api link.
     $api = "https://api.openweathermap.org/data/2.5/forecast?lat=" . $lat . "&lon=" . $lon . "&units=metric&appid=707f887ecd5251999113de968cac62e8";
     $weather = file_get_contents($api);
     $data = json_decode($weather);
@@ -61,7 +58,6 @@
     ?>
 </div>
 
-<!-- 5 day decoding -->
 <div>
     <?php
 
@@ -91,7 +87,6 @@
     ?>
 </div>
 
-<!-- today decoding -->
 <div>
     <?php
     $date0 = substr($data->list[1]->dt_txt, 0, 10);
@@ -102,7 +97,6 @@
     ?>
 </div>
 
-<!-- 3hr decoding -->
 <div>
     <?php
     $time01 = substr($data->list[1]->dt_txt, 10);
@@ -138,7 +132,6 @@
     <div class="m-3 px-3">
         <h1 class="h1 m-3 p-3 text-center">Weatherooo</h1>
 
-        <!-- search place -->
         <div class="row g-3 m-3">
             <div class="col mx-2 py-3">
                 <div class="form-floating mb-3 px-5">
@@ -165,8 +158,6 @@
             </div>
         </div>
 
-
-        <!-- current forcast -->
         <div class="row g-3 m-3">
             <h2> Today's Forecast</h2>
             <div class="col-3 container mx-2 py-3">
@@ -345,12 +336,9 @@
 
         </div>
 
-
-
-        <!-- 5 day forecast -->
         <div class="row g-3 m-3">
             <h2> 5 Day Forecast</h2>
-            <!-- Day 1 -->
+
             <div class="col container mx-2 py-3">
                 <div>
                     Date:
@@ -372,7 +360,7 @@
                     ?>
                 </div>
             </div>
-            <!-- Day 2 -->
+
             <div class="col container mx-2 py-3">
                 <div>
                     Date:
@@ -394,7 +382,7 @@
                     ?>
                 </div>
             </div>
-            <!-- Day 3 -->
+
             <div class="col container mx-2 py-3">
                 <div>
                     Date:
@@ -417,7 +405,7 @@
                 </div>
             </div>
 
-            <!-- Day 4 -->
+
             <div class="col container mx-1 py-3">
                 <div>
                     Date:
@@ -440,7 +428,7 @@
                 </div>
             </div>
 
-            <!-- Day 5 -->
+
             <div class="col container mx-2 py-3">
                 <div>
                     Date:
